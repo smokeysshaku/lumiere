@@ -3,8 +3,40 @@
 Copy this into Gmail, fill in the recipient from the department's own site or from
 the district office directly, attach `Tlhago_Agri_Pro_Funding_Proposal.docx`, send.
 
-**To:** _(get the current address from the LDARD Capricorn District office — do not
-guess it)_
+**To:** _see the contact block below — confirm by phone before sending_
+
+## LDARD contact details
+
+Found via web search only. **The department's own website could not be opened**
+(`ldard.gov.za`, `limpopo.gov.za`, `dalrrd.gov.za` are all blocked from the
+environment this was written in), so none of this is verified against source.
+Confirm before you rely on it.
+
+| | |
+|---|---|
+| **Telephone** | **015 294 3000** — this is the number to call |
+| Fax | 015 294 4504 |
+| Physical | Temo Towers, 67–69 Biccard Street, Polokwane 0699 |
+| Postal | Private Bag X9487, Polokwane 0700 |
+| Website | ldard.gov.za → Contact Us |
+| Head of Department | Ms RJ Maisela — `Maiselarj@agric.limpopo.gov.za` (unverified) |
+| Capricorn District Director | Ms EM Kekana (name only; no address found) |
+
+**Phone before you email.** One call to 015 294 3000 gets you the Capricorn
+district office, the name and email of the extension officer for Mphahlele, and
+the current CASP/Ilima-Letsema window — in about five minutes. An email to a
+general departmental inbox may sit for weeks.
+
+Do not email the Head of Department as a first approach. That is the top of the
+provincial department; a first-time smallholder enquiry belongs with the district
+office and the extension officer, and starting at the top usually means being
+forwarded back down having used up your introduction. Use the HOD address only if
+the district route goes nowhere.
+
+**Do not guess an address from the pattern.** The convention appears to be
+`surname+initials@agric.limpopo.gov.za`, but constructing Ms Kekana's address from
+that guess would most likely bounce or reach the wrong person with your business
+details attached. Ask for it on the phone.
 
 **Subject:** Funding enquiry and application — Tlhago Agri Pro (Pty) Ltd, 5 ha kale project, Matankane Village, Lepelle-Nkumpi
 
