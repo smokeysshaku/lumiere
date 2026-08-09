@@ -344,7 +344,7 @@ const doc = new Document({
       new Paragraph({
         spacing: { after: 260 },
         children: [new TextRun({ text: 'First commercial crop  ·  Matankane Village, Limpopo  ·  ', font: 'Calibri', size: 20, color: GREY }),
-                   new TextRun({ text: '[Month, Year]', font: 'Calibri', size: 20, color: GREY, bold: true, highlight: 'yellow' })],
+                   new TextRun({ text: 'August 2026', font: 'Calibri', size: 20, color: GREY, bold: true })],
       }),
 
       askBox,
@@ -441,8 +441,8 @@ const doc = new Document({
         t(' is a South African company, registration number 2025/973670/07, based at Stand 159, Matankane Village, Mphahlele, Limpopo.'),
       ]),
       body([
-        t('Project manager: ', { bold: true }), t('Kabelo Shaku — '), fill('[one line: your farming background and years of experience]'),
-        t('. The project manager runs day-to-day operations, draws the seasonal plan, and reports to the board.'),
+        t('Project manager: ', { bold: true }), t('Kabelo Shaku.'),
+        t(' The project manager runs day-to-day operations, draws the seasonal plan, and reports to the board.'),
       ]),
       body('Two coordinators supervise field teams and report to the project manager. A board of advisors — the project management, the landowner and experienced farmers — oversees the project and mediates any agreement signed on behalf of the community.'),
       body('Field workers are hired from the community on a rotational basis, season by season.'),
