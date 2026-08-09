@@ -1,5 +1,7 @@
 # Tlhago Agri Pro — analysis of the business profile, and what changed in the rewrite
 
+Crop: kale (5 ha, Matankane Village)
+
 Source: `Business_profile_22.docx` (Tlhago Agri Pro (Pty) Ltd, Reg No 2025/973670/07)
 Rewrite: `Tlhago_Agri_Pro_Funding_Proposal.docx`
 
@@ -72,7 +74,7 @@ yarn + piggery + a community trust + roads + parks + libraries + a primary schoo
 they read as unfocused, and they make the R332 700 look like a down-payment on
 something enormous.
 
-**Fixed by:** one funded thing (red onions on 5 ha) and everything else clearly
+**Fixed by:** one funded thing (kale on 5 ha) and everything else clearly
 labelled Phase 2 and Phase 3 — *"We are asking you to fund Phase 1. The rest is
 what Phase 1 makes possible."* Ambition kept, risk visibly contained.
 
@@ -116,20 +118,41 @@ each with what you actually do about it.
 
 ## 4. What the rewrite does with your budget
 
-Your arithmetic is correct — the nine line items do sum to R332 700. But grouped
-flat, the tractor swamps everything and the ask looks like R332 700 of *cost*.
-Regrouped, it tells a much stronger story:
+Your arithmetic in the original was correct — the nine line items summed to
+R332 700. But grouped flat, the tractor swamped everything and the ask read as
+R332 700 of *cost*. Regrouped, it tells a much stronger story.
+
+Two line items were revised after the first draft: **fencing R3 000 → R100 000**
+(the original figure was implausibly low for a 5-hectare perimeter, so this is
+more credible, not less) and **harvest wages → R30/hour × 30 people × 40 hours =
+R36 000**. New total: **R455 700**.
 
 | Group | Amount | Meaning |
 |---|---:|---|
-| Equipment (once-off) | R280 250 | Assets you still own in ten years |
+| Equipment (once-off) | R377 250 | Assets you still own in ten years |
 | Growing costs (one season) | R42 450 | Repeats each season |
-| People | R10 000 | 50 workers × R200, straight into local households |
-| **Grand total** | **R332 700** | |
+| People | R36 000 | 30 workers × 40 h × R30, straight into local households |
+| **Grand total** | **R455 700** | |
 
-**84% of the ask is once-off capital.** A season after this one costs **R52 450**
+**83% of the ask is once-off capital.** A season after this one costs **R78 450**
 to run. That single fact — same numbers, regrouped — is the most persuasive thing
 in your budget and the original never says it.
+
+### Two line items still carried over from the onion budget
+
+The crop is now kale, but these two were priced for onions and were not part of
+the revision. Get quotes before submitting:
+
+- **Seed, R1 250.** Kale seed and seedlings for 5 hectares will not cost the same
+  as onion seed. It is only 0.3% of the budget, but a funder who knows the crop
+  will check it.
+- **Petrol for the water pump, R11 200 (R200/day × 56 days).** Fifty-six days was
+  an onion irrigation cycle. Kale is cut repeatedly over a longer season, so this
+  is likely understated.
+
+One more consequence of the crop change: kale is harvested continuously rather
+than in one lift, so 30 people × 40 hours may not describe the labour pattern
+well. Consider whether it is really a smaller crew working across more weeks.
 
 ---
 
@@ -137,11 +160,15 @@ in your budget and the original never says it.
 
 Three highlighted blanks in the new document, plus two corrections:
 
-1. **Season-one revenue** (highlighted, "What comes back" section). Onion revenue
-   is yield × price. Get three numbers from your market agent: expected tonnes per
-   hectare, the price per 10 kg bag at Tshwane Market, and therefore the season
-   total. **Do not send the proposal without this.** A funder needs to see the
-   R332 700 come back.
+1. **Season-one revenue.** The proposal now carries a scenario table — kale price
+   per kg (R5 / R8 / R11 / R14) against two yields (15 and 22 t/ha on 5 hectares).
+   **These are planning ranges, not market data.** Live Joburg Market prices could
+   not be retrieved when this was written: `joburgmarket.co.za`, `farmazone.co.za`
+   and every other market-price site are blocked by this environment's network
+   policy. Read the real number off the Joburg Market daily price list
+   (`joburgmarket.co.za/daily-price-list/`, published weekdays 12:00–13:00) in the
+   week you submit, confirm the yield with a Limpopo extension officer, and
+   replace the table with one figure.
 2. **Project manager bio** (highlighted) — one line on your farming background
    and years of experience.
 3. **Date** on the cover line (highlighted).

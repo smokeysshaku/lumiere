@@ -13,7 +13,7 @@ const RULE = 'C8D8C8';
 
 const CONTENT_W = 9746; // A4 (11906) minus 2 x 1080 margins
 
-const logo = fs.readFileSync(__dirname + '/../media/word/media/image1.jpeg');
+const logo = fs.readFileSync(__dirname + '/logo.jpeg');
 
 // ---------- helpers ----------
 const t = (text, o = {}) => new TextRun({ text, font: 'Calibri', size: o.size || 21, bold: o.bold, italics: o.italics, color: o.color || DARK, highlight: o.highlight });
@@ -174,11 +174,11 @@ const askBox = new Table({
             }),
             new Paragraph({
               spacing: { after: 80 },
-              children: [new TextRun({ text: 'R332 700', font: 'Calibri', size: 52, bold: true, color: GREEN })],
+              children: [new TextRun({ text: 'R455 700', font: 'Calibri', size: 52, bold: true, color: GREEN })],
             }),
             new Paragraph({
               spacing: { after: 0, line: 264 },
-              children: [t('To plant, grow and harvest our first commercial crop — red onions on 5 hectares at Matankane Village, Lepelle-Nkumpi Municipality, Limpopo.')],
+              children: [t('To plant, grow and harvest our first commercial crop — kale on 5 hectares at Matankane Village, Lepelle-Nkumpi Municipality, Limpopo.')],
             }),
           ],
         }),
@@ -224,24 +224,48 @@ const budgetTable = new Table({
     budgetRow('Tractor', 'R250 000', 'Works the land every season from here on'),
     budgetRow('Ploughing attachment', 'R17 250', 'Prepares and ploughs the fields'),
     budgetRow('Water system and electricity', 'R10 000', 'Borehole and water reserve tank'),
-    budgetRow('Fencing material', 'R3 000', 'Secures the project site'),
-    budgetRow('Subtotal', 'R280 250', 'Assets we own after this season', { bold: true }),
+    budgetRow('Fencing material', 'R100 000', 'Fences the full 5-hectare site against livestock and theft'),
+    budgetRow('Subtotal', 'R377 250', 'Assets we own after this season', { bold: true }),
     groupRow('GROWING COSTS — ONE SEASON'),
     budgetRow('Fertiliser', 'R20 000', 'Full season across 4.5 hectares'),
     budgetRow('Pesticide', 'R10 000', 'Pest control on the fields'),
     budgetRow('Petrol for water pump', 'R11 200', 'R200 a day for 56 days of furrow irrigation'),
-    budgetRow('Red onion seed (Creole)', 'R1 250', 'The crop itself'),
+    budgetRow('Kale seed and seedlings', 'R1 250', 'The crop itself'),
     budgetRow('Subtotal', 'R42 450', 'Repeats each season', { bold: true }),
     groupRow('PEOPLE'),
-    budgetRow('Harvest wages', 'R10 000', '50 community members at R200 each'),
-    budgetRow('Subtotal', 'R10 000', 'Paid straight into local households', { bold: true }),
+    budgetRow('Harvest wages', 'R36 000', '30 community members, 40 hours each at R30 an hour'),
+    budgetRow('Subtotal', 'R36 000', 'Repeats each season, straight into local households', { bold: true }),
     new TableRow({
       children: [
         cell([new Paragraph({ spacing: { after: 0 }, children: [t('GRAND TOTAL', { bold: true, size: 22, color: GREEN })] })], { width: 4200, shade: LIGHT }),
-        cell([new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { after: 0 }, children: [t('R332 700', { bold: true, size: 22, color: GREEN })] })], { width: 1700, shade: LIGHT }),
+        cell([new Paragraph({ alignment: AlignmentType.RIGHT, spacing: { after: 0 }, children: [t('R455 700', { bold: true, size: 22, color: GREEN })] })], { width: 1700, shade: LIGHT }),
         cell([new Paragraph({ spacing: { after: 0 }, children: [t('', { size: 20 })] })], { width: 3846, shade: LIGHT }),
       ],
     }),
+  ],
+});
+
+// ---------- revenue scenarios ----------
+const revRow = (price, low, high, header) =>
+  new TableRow({
+    tableHeader: header,
+    children: [
+      cell([new Paragraph({ spacing: { after: 0, line: 252 }, children: [t(price, { bold: true, size: header ? 18 : 20, color: header ? GREEN : DARK })] })], { width: 3246 }),
+      cell([new Paragraph({ alignment: header ? undefined : AlignmentType.RIGHT, spacing: { after: 0, line: 252 }, children: [t(low, { bold: header, size: header ? 18 : 20, color: header ? GREEN : DARK })] })], { width: 3250 }),
+      cell([new Paragraph({ alignment: header ? undefined : AlignmentType.RIGHT, spacing: { after: 0, line: 252 }, children: [t(high, { bold: header, size: header ? 18 : 20, color: header ? GREEN : DARK })] })], { width: 3250 }),
+    ],
+  });
+
+const revenueTable = new Table({
+  columnWidths: [3246, 3250, 3250],
+  width: { size: CONTENT_W, type: WidthType.DXA },
+  borders: hairline,
+  rows: [
+    revRow('PRICE AT MARKET', 'AT 15 t/ha  (75 tonnes)', 'AT 22 t/ha  (110 tonnes)', true),
+    revRow('R5 per kg', 'R375 000', 'R550 000'),
+    revRow('R8 per kg', 'R600 000', 'R880 000'),
+    revRow('R11 per kg', 'R825 000', 'R1 210 000'),
+    revRow('R14 per kg', 'R1 050 000', 'R1 540 000'),
   ],
 });
 
@@ -331,10 +355,10 @@ const doc = new Document({
         t(' — a tractor, a plough, fencing and a water system; '),
         t('the inputs for one full season', { bold: true }),
         t(' — seed, fertiliser, pesticide and fuel; and '),
-        t('wages for 50 local people at harvest', { bold: true }),
+        t('wages for 30 local people through the harvest', { bold: true }),
         t('.'),
       ]}),
-      body('Eighty-four percent of it is once-off. After this season the tractor is ours, the field is fenced and watered, and every season that follows costs R52 450 to run.'),
+      body('Eighty-three percent of it is once-off. After this season the tractor is ours, the field is fenced and watered, and every season that follows costs R78 450 to run.'),
 
       h1('Why we exist'),
       body([t('We exist so that people can eat. That is the whole of it.', { bold: true })]),
@@ -351,9 +375,9 @@ const doc = new Document({
       body([t('The land is here. The water is here. The people are here. Only the work is missing — and that is the part we build.', { italics: true, color: GREEN, bold: true })]),
 
       h1('What we do'),
-      bullet([t('Grow. ', { bold: true }), t('Seasonal vegetables and field crops, rotated by season, starting with red onions.')]),
+      bullet([t('Grow. ', { bold: true }), t('Seasonal vegetables and field crops, rotated by season, starting with kale.')]),
       bullet([t('Pack and sell. ', { bold: true }), t('Into the national fresh produce markets — Tshwane Market and City Deep — through agents already willing to take our produce, and to local retailers such as Spar and U-Save.')]),
-      bullet([t('Employ. ', { bold: true }), t('Community members on a rotational basis, with 50 seasonal workers at harvest in year one.')]),
+      bullet([t('Employ. ', { bold: true }), t('Community members on a rotational basis, with 30 seasonal workers at harvest in year one.')]),
       bullet([t('Give back. ', { bold: true }), t('Surplus is paid into a community trust for food support to the poorest households, care for orphans and vulnerable children, and skills training.')]),
 
       h1('Why it works here'),
@@ -367,8 +391,8 @@ const doc = new Document({
       h2('First 12 months'),
       numbered('Sign a written lease over the 5-hectare site with the traditional authority.', 'short'),
       numbered('Fence the site, fit the water system, and bring the 5 hectares into production.', 'short'),
-      numbered('Plant, harvest and sell one full red onion crop.', 'short'),
-      numbered('Put 50 community members on the payroll through the harvest.', 'short'),
+      numbered('Plant, harvest and sell one full kale crop.', 'short'),
+      numbered('Put 30 community members on the payroll through the harvest.', 'short'),
       numbered('Open the community trust account and pay in the first surplus.', 'short'),
       h2('Three to five years'),
       numbered('Bring the remaining ~50 hectares into production and rotate crops year-round.', 'long'),
@@ -381,32 +405,32 @@ const doc = new Document({
       h1('What the money buys'),
       budgetTable,
       new Paragraph({ spacing: { before: 140, after: 140, line: 264 }, children: [
-        t('R280 250 of this — 84% — is equipment we will still own in ten years. Strip that out and a full season of growing and harvesting costs R52 450. '),
+        t('R377 250 of this — 83% — is equipment we will still own in ten years. Strip that out and a full season of growing and harvesting costs R78 450. '),
         t('This is the expensive season. Every one after it is cheap.', { bold: true }),
       ]}),
 
       h1('What comes back'),
-      bullet('50 households earning wages at harvest in the first season alone.'),
-      bullet('A fenced, irrigated, tractor-equipped farm that can plant every season after this for R52 450.'),
+      bullet('30 households earning wages at harvest in the first season alone.'),
+      bullet('A fenced, irrigated, tractor-equipped farm that can plant every season after this for R78 450.'),
       bullet('Produce into the formal market, and produce donated to the poorest households in the village.'),
       bullet('Every rand of surplus paid into the community trust, for skills, schooling and infrastructure.', { after: 140 }),
 
       h2('Season one revenue'),
+      body('Kale is a cut-and-come-again crop: one planting is cut repeatedly through the season rather than lifted once. Revenue is the kilograms we sell multiplied by the price on the day at Joburg Market in City Deep, which publishes its price list every weekday between 12:00 and 13:00.'),
+      revenueTable,
+      new Paragraph({ spacing: { before: 140, after: 140, line: 264 }, children: [
+        t('These are planning ranges, not quotations. ', { bold: true }),
+        t('Confirm the price against the Joburg Market daily list in the week you submit, and the yield with your local extension officer — then replace this table with the single figure you can stand behind.'),
+      ]}),
       new Paragraph({ spacing: { after: 140, line: 264 }, children: [
-        t('Onion revenue is yield multiplied by price: '),
-        fill('[  ] tonnes per hectare'),
-        t(' across 5 hectares, sold at '),
-        fill('R[  ] per 10 kg bag'),
-        t(' at Tshwane Market, giving '),
-        fill('R[  ]'),
-        t(' for the season against R332 700 invested. Confirm these three figures with your market agent and fill them in before this proposal goes out.'),
+        t('Even the most cautious corner of this table — R375 000 — covers a full season of growing and wages (R78 450) more than four times over, and pays back the R377 250 of equipment inside the first two seasons.'),
       ]}),
 
       h1('The risks, honestly'),
       riskTable,
 
       h1('Where this goes'),
-      bullet([t('Phase 1 — funded by this proposal. ', { bold: true }), t('Five hectares, red onions, 50 jobs at harvest, one full season proven end to end.')]),
+      bullet([t('Phase 1 — funded by this proposal. ', { bold: true }), t('Five hectares, kale, 30 jobs at harvest, one full season proven end to end.')]),
       bullet([t('Phase 2. ', { bold: true }), t('The full ~50 hectares under rotation, and a second crop line: tomatoes, butternut, mango.')]),
       bullet([t('Phase 3. ', { bold: true }), t('An agro-processing plant and livestock, and a community trust large enough to build roads, a skills school and health facilities.')]),
       body('We are asking you to fund Phase 1. The rest is what Phase 1 makes possible.', { after: 60 }),
